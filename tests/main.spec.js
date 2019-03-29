@@ -1,3 +1,4 @@
+/* eslint no-unused-expressions: 0 */
 import chai, { expect } from 'chai';
 import { describe, it } from 'mocha';
 import sinon from 'sinon';
