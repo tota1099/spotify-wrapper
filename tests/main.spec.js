@@ -47,7 +47,6 @@ describe('Spotify Wrapper', () => {
   });
 
   describe('Generic Search', () => {
-
     it('should call fecth function', () => {
       search();
 
