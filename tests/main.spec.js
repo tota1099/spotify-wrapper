@@ -3,7 +3,6 @@ import chai, { expect } from 'chai';
 import { describe, it } from 'mocha';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import sinonStubPromise from 'sinon-stub-promise';
 
 import {
   search,
@@ -13,7 +12,6 @@ import {
 } from '../src/main';
 
 chai.use(sinonChai);
-sinonStubPromise(sinon);
 
 global.fetch = require('node-fetch');
 
@@ -41,6 +39,7 @@ describe('Spotify Wrapper', () => {
 
     beforeEach(() => {
       fetchedStub = sinon.stub(global, 'fetch');
+      fetchedStub.resolves({ json: () => {} });
     });
 
     afterEach(() => {
@@ -53,7 +52,7 @@ describe('Spotify Wrapper', () => {
       expect(fetchedStub).to.have.been.calledOnce;
     });
 
-    it('shouldreceive the correct url to fetch', () => {
+    it('should receive the correct url to fetch', () => {
       context('passing one type', () => {
         search('Incubus', 'artist');
 
@@ -71,6 +70,13 @@ describe('Spotify Wrapper', () => {
         expect(fetchedStub).to.have.been
           .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist,album');
       });
+    });
+
+    it('should return the JSON Data from the Promise', () => {
+      const album = search('Incubus', 'artist');
+      album
+        .then(data => expect(data).to.be.equal({ album: 'name' }))
+        .catch(err => err);
     });
   });
 });
