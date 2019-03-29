@@ -1,0 +1,51 @@
+{
+  "name": "spotify-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper to work with the Spotify Web API",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js tests/*.spec.js",
+    "lint-fix": "npm run lint -- --fix",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "functions": 95,
+    "lines" : 95,
+    "check-coverage": true,
+    "reporter": ["text", "html"],
+    "exclude": ["tests/**"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tota1099/spotify-wrapper.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Renan Porto <renan.porto1099@gmail.com> (https://tota1099.github.io/site/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tota1099/spotify-wrapper/issues"
+  },
+  "homepage": "https://github.com/tota1099/spotify-wrapper#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "husky": "^1.3.1",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm run test:coverage"
+    }
+  }
+}
