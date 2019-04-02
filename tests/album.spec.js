@@ -9,7 +9,7 @@ chai.use(sinonChai);
 
 global.fetch = require('node-fetch');
 
-describe.only('Album', () => {
+describe('Album', () => {
   let fetchedStub;
 
   beforeEach(() => {
