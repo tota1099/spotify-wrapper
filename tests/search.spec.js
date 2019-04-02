@@ -18,7 +18,6 @@ global.fetch = require('node-fetch');
 
 describe('Spotify Wrapper', () => {
   let fetchedStub;
-  let searchStub;
 
   beforeEach(() => {
     fetchedStub = sinon.stub(global, 'fetch');
