@@ -10,7 +10,7 @@ import {
   searchAlbums,
   searchTracks,
   searchPlayLists,
-} from '../src/main';
+} from '../src/search';
 
 chai.use(sinonChai);
 
@@ -18,6 +18,7 @@ global.fetch = require('node-fetch');
 
 describe('Spotify Wrapper', () => {
   let fetchedStub;
+  let searchStub;
 
   beforeEach(() => {
     fetchedStub = sinon.stub(global, 'fetch');
@@ -49,7 +50,6 @@ describe('Spotify Wrapper', () => {
   describe('Generic Search', () => {
     it('should call fecth function', () => {
       search();
-
       expect(fetchedStub).to.have.been.calledOnce;
     });
 
@@ -71,13 +71,6 @@ describe('Spotify Wrapper', () => {
         expect(fetchedStub).to.have.been
           .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist,album');
       });
-    });
-
-    it('should return the JSON Data from the Promise', () => {
-      const album = search('Incubus', 'artist');
-      album
-        .then(data => expect(data).to.be.equal({ album: 'name' }))
-        .catch(err => err);
     });
   });
 

@@ -2,12 +2,12 @@
   "name": "spotify-wrapper",
   "version": "1.0.0",
   "description": "A wrapper to work with the Spotify Web API",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js tests/*.spec.js",
     "lint-fix": "npm run lint -- --fix",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register --watch",
     "test:coverage": "nyc npm test"
   },
   "nyc": {
@@ -38,8 +38,10 @@
   },
   "homepage": "https://github.com/tota1099/spotify-wrapper#readme",
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/register": "^7.4.0",
     "chai": "^4.2.0",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -48,6 +50,8 @@
     "mocha": "^6.0.2",
     "node-fetch": "^2.3.0",
     "nyc": "^13.3.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "sinon": "^7.3.1",
     "sinon-chai": "^3.3.0"
   },
