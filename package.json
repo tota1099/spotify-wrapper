@@ -4,6 +4,9 @@
   "description": "A wrapper to work with the Spotify Web API",
   "main": "src/index.js",
   "scripts": {
+    "clear": "rimraf lib",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
     "lint": "./node_modules/.bin/eslint src/*.js tests/*.spec.js",
     "lint-fix": "npm run lint -- --fix",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
@@ -38,6 +41,7 @@
   },
   "homepage": "https://github.com/tota1099/spotify-wrapper#readme",
   "devDependencies": {
+    "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.0",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.2",
@@ -52,6 +56,7 @@
     "nyc": "^13.3.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
+    "rimraf": "^2.6.3",
     "sinon": "^7.3.1",
     "sinon-chai": "^3.3.0"
   },
