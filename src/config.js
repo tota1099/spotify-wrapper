@@ -1,4 +1,4 @@
-const token = 'BQDUd1M7jVO8H2I6Qdq-dMI5utWdemdEymHK7jmmZNcOdjmOoS4s8ZREewcTPkdXUbVhpKNLLIOm200IXKk';
+const token = 'BQD7RovZSGUC-bJbovMrtXczUO7St22WthuTt984VfVk6lxkIzmRiDDVGlL7hsDPS37_q8uf8oLbAQi4ilI';
 
 const auth = {
   Authorization: `Bearer ${token}`,
