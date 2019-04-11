@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/tota1099/spotify-wrapper.svg?branch=master)](https://travis-ci.org/tota1099/spotify-wrapper)
 
+[![Coverage Status](https://coveralls.io/repos/github/tota1099/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/tota1099/spotify-wrapper?branch=master)
+
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api/).
 
 ## Browser Support
