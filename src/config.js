@@ -1,8 +1,12 @@
-const token = 'BQD7RovZSGUC-bJbovMrtXczUO7St22WthuTt984VfVk6lxkIzmRiDDVGlL7hsDPS37_q8uf8oLbAQi4ilI';
-
-const auth = {
-  Authorization: `Bearer ${token}`,
-};
+const TOKEN_API = 'BQArEgqaGsTScEkQQHVkN1t1ymZElVYl_AFqKrNhyshloYPcU9PioU5ZHYbG2fb4eotfRGn6OVPEEUdj9uAgFcQbnqVs6qxmsj2nWTWvYXWO4wsOqqVRoN6mHwlKE9IEV2q5tvLdSz3lxtfQ-77-YJBEoI7ZxUNHz_nfzw';
 
 export const API_URL = 'https://api.spotify.com/v1';
-export default auth;
+
+export const HEADERS = {
+  Authorization: `Bearer ${TOKEN_API}`,
+};
+
+export default {
+  API_URL,
+  HEADERS,
+};
