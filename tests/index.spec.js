@@ -24,9 +24,8 @@ describe('SpotifyWrapper Library', () => {
 
   it('should receive token as an option', () => {
     const spotify = new SpotifyWrapper({
-      token: 'foo'
+      token: 'foo',
     });
     expect(spotify.token).to.be.equal('foo');
   });
-
 });
