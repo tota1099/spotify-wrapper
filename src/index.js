@@ -1,5 +1,7 @@
 import { API_URL } from './config';
 import album from './album';
+import search from './search';
+import toJSON from './utils';
 
 export default class SpotifyWrapper {
   constructor(options) {
@@ -7,13 +9,16 @@ export default class SpotifyWrapper {
     this.token = options.token;
 
     this.album = album.bind(this)();
+    this.search = search.bind(this)();
   }
 
   request(url) {
     const header = {
-      Authorization: `Bearer ${this.token}`,
+      headers: {
+        Authorization: `'Bearer ${this.token}'`,
+      },
     };
 
-    return fetch(url, header);
+    return fetch(url, header).then(toJSON);
   }
 }
