@@ -77,7 +77,9 @@ describe('SpotifyWrapper Library', () => {
       });
 
       const headers = {
-        Authorization: 'Bearer foo',
+        headers: {
+          Authorization: 'Bearer foo',
+        },
       };
 
       spotify.request('url');

@@ -4,11 +4,11 @@ const include = join(__dirname, 'src');
 
 export default {
   mode: 'development',
-  entry: './src/index',
+  entry: './index',
   output: {
     path: join(__dirname, 'dist'),
     libraryTarget: 'umd',
-    library: 'spotifyWrapper',
+    library: 'SpotifyWrapper',
   },
   devtool: 'source-map',
   module: {
